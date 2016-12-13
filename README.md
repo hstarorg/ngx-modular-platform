@@ -16,7 +16,7 @@ npm run dev
 anywhere -p <port> -f
 
 # 如果没有anywhere
-npm -g anywhere
+npm i -g anywhere
 ```
 
 # 目录结构
