@@ -1,0 +1,56 @@
+{
+  "name": "ng2-modular-platform",
+  "version": "0.0.1",
+  "description": "A development platform based Angular2, easy for multiple teams development.",
+  "main": "index.js",
+  "scripts": {
+    "dev:app": "gulp4 app --gulpfile build/gulpfile.js --cwd ./",
+    "dev": "gulp4 build --gulpfile build/gulpfile.js --cwd ./",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hstarorg/ng2-modular-platform.git"
+  },
+  "keywords": [
+    "ng2",
+    "modular",
+    "development",
+    "platform"
+  ],
+  "author": "Jay.M.Hu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hstarorg/ng2-modular-platform/issues"
+  },
+  "homepage": "https://github.com/hstarorg/ng2-modular-platform#readme",
+  "dependencies": {
+    "@angular/common": "2.3.0",
+    "@angular/compiler": "2.3.0",
+    "@angular/core": "2.3.0",
+    "@angular/forms": "2.3.0",
+    "@angular/http": "2.3.0",
+    "@angular/platform-browser": "2.3.0",
+    "@angular/platform-browser-dynamic": "2.3.0",
+    "@angular/router": "3.3.0",
+    "bootstrap": "^3.3.7",
+    "reflect-metadata": "^0.1.8",
+    "rxjs": "5.0.1",
+    "zone.js": "0.7.2"
+  },
+  "devDependencies": {
+    "@types/core-js": "0.9.35",
+    "@types/node": "0.0.3",
+    "@types/rx": "2.5.34",
+    "angular2-template-loader": "0.6.0",
+    "awesome-typescript-loader": "3.0.0-beta.13",
+    "gulp-concat": "2.6.1",
+    "gulp-util": "3.0.7",
+    "gulp4": "4.0.1",
+    "raw-loader": "^0.5.1",
+    "shelljs": "0.7.5",
+    "typescript": "2.1.4",
+    "webpack": "2.1.0-beta.27",
+    "webpack-merge": "1.1.1"
+  }
+}
