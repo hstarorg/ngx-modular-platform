@@ -12,13 +12,11 @@ module.exports = (gulp, params) => {
   fs.readdirSync(moduleFolder).forEach(name => {
     let modulePath = path.join(moduleFolder, name);
     // 不是目录就忽略
-    if (!fs.statSync(moduleFolder).isDirectory()) {
+    if (!fs.statSync(modulePath).isDirectory()) {
       return;
     }
     modules[name] = `./src/modules/${name}/index.ts`;
   });
-
-  console.log(modules);
 
   gulp.task('modules:js', done => {
     let opt = webpackMerge(commonConfig, {
