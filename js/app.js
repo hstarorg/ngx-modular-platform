@@ -195,7 +195,7 @@ var appRoutes = [
     { path: '', component: app_1.HomeComponent }
 ].concat(dynamicRoutes);
 console.log(appRoutes);
-exports.routing = router_1.RouterModule.forRoot(appRoutes, { useHash: false });
+exports.routing = router_1.RouterModule.forRoot(appRoutes, { useHash: true });
 
 
 /***/ },
@@ -362,7 +362,7 @@ var ModuleLoaderService = (function () {
     ModuleLoaderService.prototype.load = function (moduleName) {
         var _this = this;
         return new Promise(function (resolve, reject) {
-            var path = "modules/" + moduleName + "/app.js";
+            var path = "/dist/modules/" + moduleName + "/app.js";
             _this.http.get(path)
                 .toPromise()
                 .then(function (res) {
@@ -391,7 +391,7 @@ exports.ModuleLoaderService = ModuleLoaderService;
 /* 14 */
 /***/ function(module, exports) {
 
-module.exports = "<header>\r\n  <nav role=\"navigation\" class=\"navbar navbar-inverse navbar-fixed-top\">\r\n    <div class=\"container-fluid\">\r\n      <div class=\"navbar-header\"><button type=\"button\" data-toggle=\"collapse\" data-target=\"#navbar\" aria-expanded=\"false\" aria-controls=\"navbar\" class=\"navbar-toggle collapsed\"><span class=\"sr-only\">Toggle navigation</span> <span class=\"icon-bar\"></span> <span class=\"icon-bar\"></span> <span class=\"icon-bar\"></span></button>        <a href=\"/\" class=\"navbar-brand\">NG2-MODULAR_PLATFORM</a></div>\r\n      <div id=\"navbar\" class=\"navbar-collapse collapse\">\r\n        <ul class=\"nav navbar-nav navbar-left\">\r\n          <li class=\"nav-item\"><a href=\"javascript:void(0);\" routerLink=\"/\" class=\"nav-link\">Home</a></li>\r\n          <li class=\"nav-item\"><a href=\"javascript:void(0);\" routerLink=\"/demo1\" class=\"nav-link\">Demo1</a></li>\r\n        </ul>\r\n      </div>\r\n    </div>\r\n  </nav>\r\n</header>\r\n<div class=\"page-view-container\" style=\"margin-top: 50px;\">\r\n  <div class=\"container\">\r\n    <router-outlet></router-outlet>\r\n  </div>\r\n</div>"
+module.exports = "<header>\r\n  <nav role=\"navigation\" class=\"navbar navbar-inverse navbar-fixed-top\">\r\n    <div class=\"container-fluid\">\r\n      <div class=\"navbar-header\"><button type=\"button\" data-toggle=\"collapse\" data-target=\"#navbar\" aria-expanded=\"false\" aria-controls=\"navbar\" class=\"navbar-toggle collapsed\"><span class=\"sr-only\">Toggle navigation</span> <span class=\"icon-bar\"></span> <span class=\"icon-bar\"></span> <span class=\"icon-bar\"></span></button>        <a href=\"\" class=\"navbar-brand\">NG2-MODULAR_PLATFORM</a></div>\r\n      <div id=\"navbar\" class=\"navbar-collapse collapse\">\r\n        <ul class=\"nav navbar-nav navbar-left\">\r\n          <li class=\"nav-item\"><a href=\"javascript:void(0);\" routerLink=\"/\" class=\"nav-link\">Home</a></li>\r\n          <li class=\"nav-item\"><a href=\"javascript:void(0);\" routerLink=\"/demo1\" class=\"nav-link\">Demo1</a></li>\r\n        </ul>\r\n      </div>\r\n    </div>\r\n  </nav>\r\n</header>\r\n<div class=\"page-view-container\" style=\"margin-top: 50px;\">\r\n  <div class=\"container\">\r\n    <router-outlet></router-outlet>\r\n  </div>\r\n</div>"
 
 /***/ },
 /* 15 */
