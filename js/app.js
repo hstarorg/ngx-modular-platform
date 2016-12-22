@@ -362,7 +362,7 @@ var ModuleLoaderService = (function () {
     ModuleLoaderService.prototype.load = function (moduleName) {
         var _this = this;
         return new Promise(function (resolve, reject) {
-            var path = "/dist/modules/" + moduleName + "/app.js";
+            var path = "modules/" + moduleName + "/app.js";
             _this.http.get(path)
                 .toPromise()
                 .then(function (res) {
