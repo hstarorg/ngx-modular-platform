@@ -33,4 +33,4 @@ const appRoutes: Routes = [
 
 console.log(appRoutes);
 
-export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes, { useHash: false });
+export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes, { useHash: true });
