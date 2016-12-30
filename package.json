@@ -4,8 +4,9 @@
   "description": "A development platform based Angular2, easy for multiple teams development.",
   "main": "index.js",
   "scripts": {
+		"types": "gulp4 build:types --gulpfile build/gulpfile.js --cwd ./",
     "dev:app": "gulp4 app --gulpfile build/gulpfile.js --cwd ./",
-    "dev": "gulp4 build --gulpfile build/gulpfile.js --cwd ./",
+    "dev": "gulp4 --gulpfile build/gulpfile.js --cwd ./",
     "test": "test"
   },
   "repository": {
@@ -25,32 +26,35 @@
   },
   "homepage": "https://github.com/hstarorg/ng2-modular-platform#readme",
   "dependencies": {
-    "@angular/common": "2.3.0",
-    "@angular/compiler": "2.3.0",
-    "@angular/core": "2.3.0",
-    "@angular/forms": "2.3.0",
-    "@angular/http": "2.3.0",
-    "@angular/platform-browser": "2.3.0",
-    "@angular/platform-browser-dynamic": "2.3.0",
-    "@angular/router": "3.3.0",
-    "bootstrap": "^3.3.7",
-    "reflect-metadata": "^0.1.8",
-    "rxjs": "5.0.1",
-    "zone.js": "0.7.2"
+    "@angular/common": "2.4.1",
+    "@angular/compiler": "2.4.1",
+    "@angular/core": "2.4.1",
+    "@angular/forms": "2.4.1",
+    "@angular/http": "2.4.1",
+    "@angular/platform-browser": "2.4.1",
+    "@angular/platform-browser-dynamic": "2.4.1",
+    "@angular/router": "3.4.1",
+    "bootstrap": "3.3.7",
+    "reflect-metadata": "0.1.9",
+    "rxjs": "5.0.2",
+    "zone.js": "0.7.4"
   },
   "devDependencies": {
     "@types/core-js": "0.9.35",
-    "@types/node": "0.0.3",
-    "@types/rx": "2.5.34",
+    "@types/node": "6.0.55",
+    "@types/rx": "4.1.0",
     "angular2-template-loader": "0.6.0",
     "awesome-typescript-loader": "3.0.0-beta.13",
+    "browser-sync": "^2.18.5",
+    "connect-history-api-fallback": "^1.3.0",
     "gulp-concat": "2.6.1",
-    "gulp-util": "3.0.7",
+    "gulp-util": "3.0.8",
     "gulp4": "4.0.1",
+    "node-notifier": "^4.6.1",
     "raw-loader": "^0.5.1",
     "shelljs": "0.7.5",
     "typescript": "2.1.4",
-    "webpack": "2.1.0-beta.27",
-    "webpack-merge": "1.1.1"
+    "webpack": "2.2.0-rc.3",
+    "webpack-merge": "2.0.0"
   }
 }

@@ -9,14 +9,11 @@ A development platform based Angular2, easy for multiple teams development.
 # 初始化依赖 
 npm i
 
-# 执行编译并监控
+# 生成type define文件
+npm run types
+
+# 运行（执行编译并监控）
 npm run dev
-
-# 运行
-anywhere -p <port> -f
-
-# 如果没有anywhere
-npm i -g anywhere
 ```
 
 # 目录结构
@@ -67,3 +64,8 @@ src/ -- 源代码目录
 3. 其他问题~
 
     待挖掘
+
+### 注意事项
+
+1. 进行模块开发， 如果有框架依赖，一定要引用完整依赖，如 `import { xxx } from 'rxjs'`
+2. 要使用公共模块，请务必使用 `import { xxx } from 'app/common'`

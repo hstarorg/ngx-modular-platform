@@ -2,7 +2,7 @@ import { ModuleWithProviders, ApplicationRef } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { Http, ConnectionBackend } from '@angular/http';
 
-import { ModuleLoaderService } from './common_module';
+import { ModuleLoaderService } from 'app/common';
 
 import { HomeComponent } from './app';
 

@@ -1,0 +1,24 @@
+{
+	"compilerOptions": {
+		"target": "ES5",
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"noLib": false,
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"sourceMap": false,
+		"noEmitOnError": false,
+		"baseUrl": "./",
+		"typeRoots": [
+			"./../../node_modules/@types",
+			"./../../src"
+		],
+		"declaration": true,
+		"declarationDir": "./../../node_modules/@types/app/common",
+		"outDir": "./../../dist"
+	},
+	"awesomeTypescriptLoaderOptions": {
+		"forkChecker": true,
+		"useWebpackText": true
+	}
+}

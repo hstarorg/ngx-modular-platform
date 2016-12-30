@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
-import { ModuleLoaderService, CommonModule } from './common_module';
+import { ModuleLoaderService, CommonModule } from 'app/common';
 
 import { routing } from './app.routing';
 import { AppComponent, ALL_PAGES } from './app';
