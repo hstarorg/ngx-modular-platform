@@ -1,23 +1,26 @@
 import { NgModule } from '@angular/core';
-import { CommonModule as Ng2CommonModule } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+
+import { COMMON_COMPONENTS } from './components';
+import { COMMON_PIPES } from './pipes';
 
 @NgModule({
   imports: [
     HttpModule
   ],
   exports: [
-    Ng2CommonModule,
+    CommonModule,
     HttpModule,
     JsonpModule,
     FormsModule,
     RouterModule
   ],
-  declarations: [],
+  declarations: [...COMMON_COMPONENTS, ...COMMON_PIPES],
   providers: [],
 })
-export class CommonModule {
+export class AppCommonModule {
 
 }

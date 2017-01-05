@@ -1,9 +1,11 @@
-import { CommonModule } from './common.module';
-// All services
+require('./styl/all.styl');
+
+import { AppCommonModule } from './common.module';
+
 export * from './services';
-// All filters
-export * from './filters';
+export * from './pipes';
+export * from './components';
 
 export {
-  CommonModule
+  AppCommonModule
 };
