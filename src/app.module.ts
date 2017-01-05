@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-
 import { ModuleLoaderService, CommonModule } from 'app/common';
 
 import { routing } from './app.routing';
-import { AppComponent, ALL_PAGES } from './app';
-
+import { ALL_SERVICES } from './services';
+import { AppComponent, ALL_PAGES } from './pages';
 
 @NgModule({
   imports: [
@@ -16,7 +15,8 @@ import { AppComponent, ALL_PAGES } from './app';
   ],
   declarations: [...ALL_PAGES],
   providers: [
-    ModuleLoaderService
+    ModuleLoaderService,
+    ...ALL_SERVICES
   ],
   bootstrap: [AppComponent]
 })

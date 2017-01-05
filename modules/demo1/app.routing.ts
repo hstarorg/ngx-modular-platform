@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import {
   Page1Component
-} from './app';
+} from './pages';
 
 // 配置路由
 const appRoutes: Routes = [

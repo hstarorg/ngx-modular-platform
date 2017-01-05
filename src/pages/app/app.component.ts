@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: 'app.component.html'
 })
 export class AppComponent implements OnInit, OnDestroy {
-  
+
   constructor() {
   }
 

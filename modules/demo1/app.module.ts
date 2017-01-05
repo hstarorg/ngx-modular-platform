@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import { routing } from './app.routing';
-import { ALL_PAGES } from './app';
+import { ALL_PAGES } from './pages';
 
 @NgModule({
   imports: [

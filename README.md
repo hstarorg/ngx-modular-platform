@@ -20,6 +20,9 @@ npm run dev
 
 ```
 build/ -- 构建代码目录
+modules/ -- 模块放置目录
+  demo1/ -- 模块1
+  demo2/ -- 模块2
 src/ -- 源代码目录
   app/ -- 页面目录
   common_module/ -- 公共模块目录
@@ -27,9 +30,6 @@ src/ -- 源代码目录
     services/ -- 公共服务
     common.module.ts -- 公共模块定义
     index.ts -- 导出公共模块
-  modules/ -- 模块放置目录
-    demo1/ -- 模块1
-    demo2/ -- 模块2
   app.module.ts -- 根模块
   app.routing.ts -- 顶级路由配置
   bootstrap.ts -- 程序入口
