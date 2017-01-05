@@ -1,9 +1,9 @@
 # ng2-modular-platform
 A development platform based Angular2, easy for multiple teams development.
 
-基于Ng2的模块化开发平台核心代码。
+基于Ng2的模块化开发平台。
 
-# How to start
+# Usage
 
 ```bash
 # 初始化依赖 
@@ -14,6 +14,19 @@ npm run types
 
 # 运行（执行编译并监控）
 npm run dev
+```
+
+**注：框架默认只安装了 `css-loader`，但提供了 `sass less stylus` 的支持，如果需要使用以上几种预处理器，请务必安装相关插件**
+
+```bash
+# sass
+npm i --save-dev node-sass sass-loader
+
+# less
+npm i --save-dev less less-loader
+
+# stylus
+npm i --save-dev stylus stylus-loader
 ```
 
 # 目录结构
@@ -69,3 +82,11 @@ src/ -- 源代码目录
 
 1. 进行模块开发， 如果有框架依赖，一定要引用完整依赖，如 `import { xxx } from 'rxjs'`
 2. 要使用公共模块，请务必使用 `import { xxx } from 'app/common'`
+
+# Change log
+
+[查看变更日志](CHANGELOG.md)
+
+# License
+
+[MIT License](LICENSE)
