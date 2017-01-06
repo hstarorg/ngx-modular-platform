@@ -1,6 +1,6 @@
 {
   "name": "ng2-modular-platform",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A development platform based Angular2, easy for multiple teams development.",
   "main": "index.js",
   "scripts": {

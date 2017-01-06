@@ -1,9 +1,9 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-## v_0.0.3 (2017.01.xx)
+## v_0.0.3 (2017.01.06)
 
-- 增加 `release` 命令：`npm run build`
+- 增加 `build` 命令：`npm run build`，用于生成线上包到 `dist` 目录中
 - 增加全局 `config` 配置
 - 增加环境变量 `env`，可以通过 `process.env === 'production'` 来判断是否是产线环境
 - 修复 “代码变更之后无法自动刷新”
