@@ -8,6 +8,7 @@
     "dev:app": "gulp4 app --gulpfile build/gulpfile.js --cwd ./",
     "dev": "gulp4 --gulpfile build/gulpfile.js --cwd ./",
     "lint": "tslint -c tslint.json 'src/**/*.ts' || true",
+    "build": "gulp4 release -r --gulpfile build/gulpfile.js --cwd ./",
     "test": "test"
   },
   "repository": {

@@ -32,7 +32,7 @@ export class ModuleLoaderService {
 
   load(moduleName, isDepModule = false): Promise<any> {
     return new Promise((resolve, reject) => {
-      let path = `/dist/modules/${moduleName}/app.js`;
+      let path = `${AppConf.modulePath}${moduleName}/app.js`;
       this._loadCss(moduleName);
       this.http.get(path)
         .toPromise()
@@ -52,7 +52,7 @@ export class ModuleLoaderService {
   }
 
   useModuleStyles(moduleName: string): void {
-    let newkitModuleStyles = [].slice.apply(document.querySelectorAll('.newkit-module-style'));
+    let newkitModuleStyles = [].slice.apply(document.querySelectorAll('.dynamic-module-style'));
     let moduleDeps = this._getModuleAndDeps(moduleName);
     newkitModuleStyles.forEach(link => {
       let disabled = true;
@@ -72,7 +72,7 @@ export class ModuleLoaderService {
       return [];
     }
     if (!moduleDepsMapping.has(moduleName)) {
-      console.error(`module ${moduleName} not found.`);
+      moduleName && console.warn(`module ${moduleName} not found.`);
       return [];
     }
     let result = [moduleName];
@@ -84,11 +84,11 @@ export class ModuleLoaderService {
   }
 
   _loadCss(moduleName: string): void {
-    let cssPath = `/dist/modules/${moduleName}/app.css`;
+    let cssPath = `${AppConf.modulePath}${moduleName}/app.css`;
     let link = document.createElement('link');
     link.setAttribute('rel', 'stylesheet');
     link.setAttribute('href', cssPath);
-    link.setAttribute('class', `newkit-module-style ${moduleName}`);
+    link.setAttribute('class', `dynamic-module-style ${moduleName}`);
     document.querySelector('head').appendChild(link);
   }
 

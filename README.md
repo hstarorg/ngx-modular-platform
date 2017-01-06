@@ -14,6 +14,9 @@ npm run types
 
 # 运行（执行编译并监控）
 npm run dev
+
+# 生成发布包
+npm run build
 ```
 
 **注：框架默认只安装了 `css-loader`，但提供了 `sass less stylus` 的支持，如果需要使用以上几种预处理器，请务必安装相关插件**

@@ -12,7 +12,7 @@ export class AuthGuard implements CanActivate, CanActivateChild {
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot, isChild = false): Promise<boolean> {
     let moduleName = state.url.split('/')[1];
-    if (!isChild && moduleName) {
+    if (!isChild) {
       this.moduleLoader.useModuleStyles(moduleName);
     }
     return Promise.resolve(true);

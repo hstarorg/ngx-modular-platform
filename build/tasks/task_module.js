@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
+const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 const webpackMerge = require('webpack-merge');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -29,13 +30,33 @@ module.exports = (gulp, params) => {
         chunkFilename: '[id].js'
       },
       plugins: [
+        new webpack.DefinePlugin({
+          'process.env': params.isRelease ? '"production"' : '"development"'
+        }),
         new ExtractTextPlugin({ filename: 'modules/[name]/app.css', disable: false, allChunks: true })
       ]
     });
-    webpack(opt).watch(200, (err, stats) => {
-      util.showWebpackError(err, stats);
-      done();
-    });
+    if (params.isRelease) {
+      opt.plugins.push(new UglifyJsPlugin({
+        compress: {
+          warnings: false
+        }
+      }));
+    }
+    const compiler = webpack(opt);
+    if (params.isRelease) {
+      compiler.run((err, stats) => {
+        util.showWebpackError(err, stats);
+        gulp.series('bs-reload')();
+        done();
+      });
+    } else {
+      compiler.watch({ aggregateTimeout: 300, poll: false }, (err, stats) => {
+        util.showWebpackError(err, stats);
+        gulp.series('bs-reload')();
+        done();
+      });
+    }
   });
 
   gulp.task('modules', gulp.parallel('modules:js'));
