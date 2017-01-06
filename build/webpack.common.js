@@ -33,7 +33,7 @@ module.exports = {
     rules: [
       { test: /\.ts$/, use: ['awesome-typescript-loader', 'angular2-template-loader'], exclude: /node_modules/ },
       { test: /\.html$/, loader: 'raw-loader' },
-      { test: /\.css$/, loader: 'css-loader' },
+      { test: /\.css$/, loader: ExtractTextPlugin.extract({ loader: 'css-loader' }) },
       { test: /\.styl$/, loader: ExtractTextPlugin.extract({ loader: 'css-loader!stylus-loader' }) },
       { test: /\.less$/, loader: ExtractTextPlugin.extract({ loader: 'css-loader!less-loader' }) },
       { test: /\.scss$/, loader: ExtractTextPlugin.extract({ loader: 'css-loader!sass-loader' }) },
