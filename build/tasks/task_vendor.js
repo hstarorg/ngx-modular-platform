@@ -14,10 +14,10 @@ module.exports = (gulp, params) => {
       .pipe(gulp.dest('./dist/static/css'));
   });
 
-  gulp.task('vendor:fonts', () => {
-    return gulp.src(assets['vendor.fonts'])
+  gulp.task('vendor:static', () => {
+    return gulp.src(assets['vendor.static'])
       .pipe(gulp.dest('./dist/static'));
   });
 
-  gulp.task('vendor', gulp.parallel('vendor:js', 'vendor:css', 'vendor:fonts'));
+  gulp.task('vendor', gulp.parallel('vendor:js', 'vendor:css', 'vendor:static'));
 };

@@ -9,7 +9,7 @@ A development platform based Angular2, easy for multiple teams development.
 # 初始化依赖 
 npm i
 
-# 生成type define文件
+# 生成type define文件（如果要运行框架代码，请务必执行该命令，否则ts-loader会有一堆错误）
 npm run types
 
 # 运行（执行编译并监控）
