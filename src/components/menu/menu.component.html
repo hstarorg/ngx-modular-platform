@@ -1,0 +1,30 @@
+<ul class="sidebar-menu j-menu">
+  <li *ngFor="let m1 of menus" [ngClass]="{treeview: m1.$hasChildren, active: m1.$active, open: m1.$open}" (click)="onMenuClick($event, m1)">
+    <a href="javascript:;">
+      <i [ngClass]="m1.icon"></i>
+      <span>{{ m1.text }}</span>
+      <span class="pull-right-container" [hidden]="!m1.$hasChildren">
+        <i class="fa fa-angle-left pull-right"></i>
+      </span>
+    </a>
+    <ul class="treeview-menu" *ngIf="m1.$hasChildren" [style.display]="(!m1.$open) ? 'none': 'block'">
+      <li *ngFor="let m2 of m1.children" [ngClass]="{treeview: m2.$hasChildren, active: m2.$active, open: m2.$open}" (click)="onMenuClick($event, m2)">
+        <a href="javascript:;">
+          <i [ngClass]="m2.icon"></i>
+          <span>{{ m2.text }}</span>
+          <span class="pull-right-container" [hidden]="!m2.$hasChildren">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu" *ngIf="m2.$hasChildren" [style.display]="(!m2.$open) ? 'none': 'block'">
+          <li *ngFor="let m3 of m2.children" [ngClass]="{treeview: m3.$hasChildren, active: m3.$active, open: m3.$open}" (click)="onMenuClick($event, m3)">
+            <a href="javascript:;">
+              <i [ngClass]="m3.icon"></i>
+              <span>{{ m3.text }}</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>

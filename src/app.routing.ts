@@ -1,12 +1,16 @@
 import { ModuleWithProviders, ApplicationRef } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { Http, ConnectionBackend } from '@angular/http';
-
 import { ModuleLoaderService } from 'app/common';
+
 import { AuthGuard } from './services';
+
 import {
-  HomeComponent,
-  NotFoundComponent
+  NotFoundComponent,
+  LoginComponent,
+  LogoutComponent,
+  LayoutComponent,
+  HomeComponent
 } from './pages';
 
 const loadModule = (moduleName) => {
@@ -32,14 +36,16 @@ modules.forEach(m => {
 });
 
 const appRoutes: Routes = [{
-  path: 'system', redirectTo: '/'
-}, ...dynamicRoutes, {
-  path: '', component: HomeComponent, canActivate: [AuthGuard], canActivateChild: [AuthGuard],
-  children: [
-
-  ]
+  path: 'login', component: LoginComponent
 }, {
-  path: '**', component: NotFoundComponent
+  path: 'logout', component: LogoutComponent
+}, {
+  path: '', component: LayoutComponent, canActivate: [AuthGuard], canActivateChild: [AuthGuard],
+  children: [
+    { path: '', component: HomeComponent },
+    ...dynamicRoutes,
+    { path: '**', component: NotFoundComponent }
+  ]
 }];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes, { useHash: true });

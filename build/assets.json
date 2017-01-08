@@ -13,6 +13,7 @@
 		"./node_modules/@angular/http/bundles/http.umd.js",
 		"./node_modules/jquery/dist/jquery.js",
 		"./node_modules/bootstrap/dist/js/bootstrap.js",
+		"./node_modules/admin-lte/plugins/slimScroll/jquery.slimscroll.js",
 		"./node_modules/admin-lte/dist/js/app.js"
 	],
 	"vendor.js.min": [
@@ -29,17 +30,23 @@
 		"./node_modules/@angular/http/bundles/http.umd.min.js",
 		"./node_modules/jquery/dist/jquery.min.js",
 		"./node_modules/bootstrap/dist/js/bootstrap.min.js",
+		"./node_modules/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js",
 		"./node_modules/admin-lte/dist/js/app.min.js"
 	],
 	"vendor.css": [
+		"./node_modules/font-awesome/css/font-awesome.css",
 		"./node_modules/bootstrap/dist/css/bootstrap.css",
-		"./node_modules/admin-lte/dist/css/AdminLTE.css"
+		"./node_modules/admin-lte/dist/css/AdminLTE.css",
+		"./node_modules/admin-lte/dist/css/skins/_all-skins.css"
 	],
 	"vendor.css.min": [
+		"./node_modules/font-awesome/css/font-awesome.min.css",
 		"./node_modules/bootstrap/dist/css/bootstrap.min.css",
-		"./node_modules/admin-lte/dist/css/AdminLTE.min.css"
+		"./node_modules/admin-lte/dist/css/AdminLTE.min.css",
+		"./node_modules/admin-lte/dist/css/skins/_all-skins.min.css"
 	],
 	"vendor.static": [
+		"./node_modules/font-awesome/fonts*/*.*",
 		"./node_modules/bootstrap/dist/fonts*/*.*",
 		"./node_modules/admin-lte/dist/img*/**/*"
 	]

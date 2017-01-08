@@ -1,3 +1,4 @@
 declare const AppConf: {
-  modulePath: string
+  modulePath: string,
+  menuData: Array<any>
 };
