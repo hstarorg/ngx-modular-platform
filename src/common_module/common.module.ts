@@ -22,5 +22,7 @@ import { COMMON_PIPES } from './pipes';
   providers: [],
 })
 export class AppCommonModule {
-
+	constructor() {
+    console.log('common init');
+  }
 }

@@ -8,7 +8,8 @@ const configDev = {
             { text: 'Trusty Home Page', icon: 'fa fa-lock', url: '/' }
           ]
         },
-        { text: 'Demo Page', icon: 'fa fa-star', url: '/demo1' }
+        { text: 'Demo Page', icon: 'fa fa-star', url: '/demo1' },
+        { text: 'Demo Page2', icon: 'fa fa-star', url: '/demo1/page2' }
       ]
     },
     {
