@@ -7,9 +7,11 @@ module.exports = {
   devtool: 'cheap-source-map',
   cache: true,
   profile: true,
-  watch: true,
   resolve: {
     extensions: ['.ts', '.js']
+  },
+  watchOptions: {
+    ignored: /node_modules/
   },
   externals: [{
     'rxjs': 'Rx',

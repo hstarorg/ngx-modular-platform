@@ -1,7 +1,7 @@
 require('./menu.component.styl');
 
-import { Component, OnInit, AfterViewInit, Input } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Component, OnInit, Input } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 
 export interface MenuEntity {
   text: string;
@@ -17,7 +17,7 @@ export interface MenuEntity {
   selector: 'j-menu',
   templateUrl: 'menu.component.html'
 })
-export class MenuComponent implements OnInit, AfterViewInit {
+export class MenuComponent implements OnInit {
 
   private menus: Array<MenuEntity>;
 
@@ -27,21 +27,16 @@ export class MenuComponent implements OnInit, AfterViewInit {
     this.menus = value;
   }
 
-  constructor(
-    private router: Router,
-    private route: ActivatedRoute
-  ) { }
+  constructor(private router: Router) {
+    this.router.events.subscribe(evt => {
+      if (evt instanceof NavigationEnd) {
+        this.setMenuStatus(evt.url);
+      }
+    });
+  }
 
   ngOnInit() {
 
-  }
-
-  ngAfterViewInit() {
-    let menu = this.findMenuByUrl(this.router.url, this.menus);
-    if (menu) {
-      menu.$active = true;
-      this.setMenuFamilyActive(menu);
-    }
   }
 
   private onMenuClick(evt, menu: MenuEntity) {
@@ -51,13 +46,10 @@ export class MenuComponent implements OnInit, AfterViewInit {
     }
     else {
       this.router.navigate([menu.url]);
-      this.setAllMenuInActive(this.menus);
-      menu.$active = true;
-      this.setMenuFamilyActive(menu);
     }
   }
 
-  findMenuByUrl(url: string, menus: Array<MenuEntity>) {
+  private findMenuByUrl(url: string, menus: Array<MenuEntity>) {
     for (let m of menus) {
       if (m.url && m.url === url) {
         return m;
@@ -71,7 +63,7 @@ export class MenuComponent implements OnInit, AfterViewInit {
     }
   }
 
-  processMenuData(menuData: Array<MenuEntity>, parent = null) {
+  private processMenuData(menuData: Array<MenuEntity>, parent = null) {
     if (!Array.isArray(menuData)) {
       return [];
     }
@@ -85,7 +77,7 @@ export class MenuComponent implements OnInit, AfterViewInit {
     });
   }
 
-  setAllMenuInActive(menus: Array<MenuEntity>) {
+  private setAllMenuInActive(menus: Array<MenuEntity>) {
     menus.forEach(x => {
       x.$active = false;
       x.$open = false;
@@ -95,10 +87,21 @@ export class MenuComponent implements OnInit, AfterViewInit {
     });
   }
 
-  setMenuFamilyActive(menu: MenuEntity) {
+  private setMenuFamilyActive(menu: MenuEntity) {
     menu.$open = true;
     if (menu.$parent) {
       this.setMenuFamilyActive(menu.$parent);
     }
+  }
+
+  private setMenuStatus(url: string) {
+    setTimeout(() => {
+      this.setAllMenuInActive(this.menus);
+      let menu = this.findMenuByUrl(url, this.menus);
+      if (menu) {
+        menu.$active = true;
+        this.setMenuFamilyActive(menu);
+      }
+    });
   }
 }

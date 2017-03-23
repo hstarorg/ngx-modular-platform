@@ -51,7 +51,7 @@ module.exports = (gulp, params) => {
         done();
       });
     } else {
-      compiler.watch({ aggregateTimeout: 300, poll: false }, (err, stats) => {
+      compiler.watch({ aggregateTimeout: 500, poll: false, ignored: [/src/, /dist/, /node_modules/] }, (err, stats) => {
         util.showWebpackError(err, stats);
         gulp.series('bs-reload')();
         done();
