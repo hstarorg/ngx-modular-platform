@@ -1,5 +1,5 @@
 {
-  "name": "ng2-modular-platform",
+  "name": "angular-modular-platform",
   "version": "0.0.3",
   "description": "A development platform based Angular2, easy for multiple teams development.",
   "main": "index.js",
@@ -15,10 +15,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hstarorg/ng2-modular-platform.git"
+    "url": "git+https://github.com/hstarorg/angular-modular-platform.git"
   },
   "keywords": [
-    "ng2",
+    "angular",
     "modular",
     "development",
     "platform"
@@ -30,49 +30,48 @@
   },
   "homepage": "https://github.com/hstarorg/ng2-modular-platform#readme",
   "dependencies": {
-    "@angular/common": "2.4.3",
-    "@angular/compiler": "2.4.3",
-    "@angular/core": "2.4.3",
-    "@angular/forms": "2.4.3",
-    "@angular/http": "2.4.3",
-    "@angular/platform-browser": "2.4.3",
-    "@angular/platform-browser-dynamic": "2.4.3",
-    "@angular/router": "3.4.3",
-    "admin-lte": "2.3.8",
+    "@angular/common": "4.0.0-rc.6",
+    "@angular/compiler": "4.0.0-rc.6",
+    "@angular/core": "4.0.0-rc.6",
+    "@angular/forms": "4.0.0-rc.6",
+    "@angular/http": "4.0.0-rc.6",
+    "@angular/platform-browser": "4.0.0-rc.6",
+    "@angular/platform-browser-dynamic": "4.0.0-rc.6",
+    "@angular/router": "4.0.0-rc.6",
+    "@angular/animations": "4.0.0-rc.6",
+    "admin-lte": "2.3.11",
     "bootstrap": "3.3.7",
     "font-awesome": "^4.7.0",
-    "jquery": "3.1.1",
-    "reflect-metadata": "0.1.9",
-    "rxjs": "5.0.3",
-    "zone.js": "0.7.4"
+    "jquery": "3.2.1",
+    "reflect-metadata": "0.1.10",
+    "rxjs": "5.2.0",
+    "zone.js": "0.8.5"
   },
   "devDependencies": {
-    "@types/core-js": "0.9.35",
-    "@types/node": "6.0.58",
-    "@types/rx": "4.1.1",
-    "angular2-template-loader": "0.6.0",
-    "awesome-typescript-loader": "3.0.0-beta.17",
-    "browser-sync": "2.18.6",
+    "@types/node": "7.0.7",
+    "angular2-template-loader": "0.6.2",
+    "awesome-typescript-loader": "3.1.2",
+    "browser-sync": "2.18.8",
     "connect-history-api-fallback": "1.3.0",
-    "css-loader": "0.26.1",
-    "extract-text-webpack-plugin": "2.0.0-beta.4",
+    "css-loader": "0.27.3",
+    "extract-text-webpack-plugin": "2.1.0",
     "gulp-concat": "2.6.1",
     "gulp-util": "3.0.8",
     "gulp4": "4.0.1",
-    "node-notifier": "4.6.1",
+    "node-notifier": "5.1.2",
     "raw-loader": "0.5.1",
-    "shelljs": "0.7.5",
+    "shelljs": "0.7.7",
     "stylus": "0.54.5",
-    "stylus-loader": "2.4.0",
-    "tslint": "4.3.1",
-    "typescript": "2.1.4",
-    "webpack": "2.2.0-rc.4",
-    "webpack-merge": "2.3.1"
+    "stylus-loader": "3.0.1",
+    "tslint": "4.5.1",
+    "typescript": "2.2.1",
+    "webpack": "2.3.1",
+    "webpack-merge": "4.1.0"
   },
   "peerDependencies": {
     "less": "^2.7.2",
     "less-loader": "^2.2.3",
-    "node-sass": "^4.1.1",
-    "sass-loader": "^4.1.1"
+    "node-sass": "^4.5.1",
+    "sass-loader": "^6.0.3"
   }
 }

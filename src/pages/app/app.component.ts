@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 
 
 @Component({
-  selector: 'ng2-app',
+  selector: 'angular-app',
   templateUrl: 'app.component.html'
 })
 export class AppComponent implements OnInit, OnDestroy {

@@ -24,6 +24,5 @@ import { AppComponent, ALL_PAGES } from './pages';
 })
 export class AppModule {
   constructor(private moduleLoader: ModuleLoaderService) {
-
   }
 }

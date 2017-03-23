@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## v_0.1.0 (2017-03-xx)
+
+- 升级 `Angular` 到 `4.x` 版本
+
 ## v_0.0.3 (2017.01.06)
 
 - 增加 `build` 命令：`npm run build`，用于生成线上包到 `dist` 目录中

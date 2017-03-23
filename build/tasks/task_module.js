@@ -24,9 +24,9 @@ module.exports = (gulp, params) => {
     let opt = webpackMerge(commonConfig, {
       entry: modules,
       output: {
-        path: './dist',
+        path: util.root('dist'),
         filename: 'modules/[name]/app.js',
-        library: ['ng2App', '[name]'],
+        library: ['ampApp', '[name]'],
         chunkFilename: '[id].js'
       },
       plugins: [

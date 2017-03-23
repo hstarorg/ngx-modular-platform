@@ -33,9 +33,9 @@ module.exports = (gulp, params) => {
         common: './src/common_module/index.ts'
       },
       output: {
-        path: './dist',
+        path: util.root('dist'),
         filename: 'app/[name].js',
-        library: ['ng2App', '[name]'],
+        library: ['ampApp', '[name]'],
         chunkFilename: '[id].js'
       },
       plugins: [

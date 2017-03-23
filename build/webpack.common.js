@@ -9,7 +9,7 @@ module.exports = {
   profile: true,
   watch: true,
   resolve: {
-    extensions: ['.ts']
+    extensions: ['.ts', '.js']
   },
   externals: [{
     'rxjs': 'Rx',
@@ -21,23 +21,24 @@ module.exports = {
     '@angular/platform-browser-dynamic': 'ng.platformBrowserDynamic',
     '@angular/router': 'ng.router',
     '@angular/forms': 'ng.forms',
-    'app/common': 'ng2App.common'
+    'app/common': 'ampApp.common',
+    '@angular/animations': 'ng.animations'
   }, (context, request, callback) => {
     if (request.indexOf('app/') === 0) {
       let key = request.split('/')[1];
-      return callback(null, `var ng2App['${key}']`);
+      return callback(null, `var ampApp['${key}']`);
     }
     callback();
   }],
   module: {
     rules: [
       { test: /\.ts$/, use: ['awesome-typescript-loader', 'angular2-template-loader'], exclude: /node_modules/ },
-      { test: /\.html$/, loader: 'raw-loader' },
-      { test: /\.css$/, loader: ExtractTextPlugin.extract({ loader: 'css-loader' }) },
-      { test: /\.styl$/, loader: ExtractTextPlugin.extract({ loader: 'css-loader!stylus-loader' }) },
-      { test: /\.less$/, loader: ExtractTextPlugin.extract({ loader: 'css-loader!less-loader' }) },
-      { test: /\.scss$/, loader: ExtractTextPlugin.extract({ loader: 'css-loader!sass-loader' }) },
-      { test: /\.sass$/, loader: ExtractTextPlugin.extract({ loader: 'css-loader!sass-loader?indentedSyntax=true' }) }
+      { test: /\.html$/, use: 'raw-loader' },
+      { test: /\.css$/, use: ExtractTextPlugin.extract({ use: 'css-loader' }) },
+      { test: /\.styl$/, use: ExtractTextPlugin.extract({ use: 'css-loader!stylus-loader' }) },
+      { test: /\.less$/, use: ExtractTextPlugin.extract({ use: 'css-loader!less-loader' }) },
+      { test: /\.scss$/, use: ExtractTextPlugin.extract({ use: 'css-loader!sass-loader' }) },
+      { test: /\.sass$/, use: ExtractTextPlugin.extract({ use: 'css-loader!sass-loader?indentedSyntax=true' }) }
     ]
   },
   plugins: [

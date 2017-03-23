@@ -1,13 +1,21 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuService } from './../../services';
 
 @Component({
   templateUrl: 'layout.component.html'
 })
 export class LayoutComponent implements OnInit {
 
-  private menuData: Array<any> = AppConf.menuData;
+  private menuData: Array<any> = [];
 
-  constructor() { }
+  constructor(private menuService: MenuService) {
 
-  ngOnInit() { }
+  }
+
+  ngOnInit() {
+    this.menuService.getMenuData()
+      .then(data => {
+        this.menuData = data;
+      });
+  }
 }

@@ -1,3 +1,4 @@
+const path = require('path');
 const gutil = require('gulp-util');
 
 const showWebpackError = (err, stats) => {
@@ -28,6 +29,11 @@ const showWebpackError = (err, stats) => {
   }
 };
 
+const root = folder => {
+  return path.join(__dirname, '../', folder);
+};
+
 module.exports = {
-  showWebpackError
+  showWebpackError,
+  root
 };

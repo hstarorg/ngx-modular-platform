@@ -39,7 +39,7 @@ export class ModuleLoaderService {
         .then(res => {
           let code = res.text();
           this._DomEval(code);
-          return window['ng2App'][moduleName];
+          return window['ampApp'][moduleName];
         })
         .then(mod => {
           let AppModule = mod.AppModule;
