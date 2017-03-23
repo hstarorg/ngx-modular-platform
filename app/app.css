@@ -1,2 +1,24 @@
+#nprogress .bar {
+  background: #d54d36;
+}
+.content-wrapper {
+  height: 100vh;
+}
+.content-wrapper .content-header {
+  height: 40px;
+  padding: 0;
+  box-shadow: 0px 0px 1px #222d32;
+}
+.content-wrapper .content-header .breadcrumb {
+  top: 3px;
+  right: auto;
+  font-size: 14px;
+}
+.j-menu:.sidebar-menu .ul-active .treeview-menu {
+  display: block;
+}
+.j-menu .treeview.open > a {
+  color: #fff;
+}
 
 /*# sourceMappingURL=app.css.map*/
