@@ -2,6 +2,6 @@ export {
 
 };
 
-export const COMMON_PIPES = [
+export const COMMON_PIPES: any[] = [
 
 ];

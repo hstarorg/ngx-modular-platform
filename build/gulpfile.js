@@ -10,7 +10,7 @@ const params = {
   isRelease
 };
 
-['task_vendor', 'task_app', 'task_module'].forEach(f => {
+['task_vendor', 'task_app', 'task_module', 'task_module_aot'].forEach(f => {
   require(`./tasks/${f}`)(gulp, params);
 });
 

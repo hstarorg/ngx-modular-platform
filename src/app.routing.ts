@@ -13,7 +13,7 @@ import {
   HomeComponent
 } from './pages';
 
-const loadModule = (moduleName) => {
+const loadModule = (moduleName: string) => {
   return () => {
     return ModuleLoaderService.load(moduleName);
   };
@@ -24,7 +24,7 @@ let modules: Array<{ path: string, module: string }> = [
   { path: 'demo1', module: 'demo1' }
 ];
 
-let dynamicRoutes = [];
+let dynamicRoutes: Routes = [];
 
 modules.forEach(m => {
   dynamicRoutes.push({

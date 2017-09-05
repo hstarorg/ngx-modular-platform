@@ -11,6 +11,8 @@
     "dev": "gulp4 --gulpfile build/gulpfile.js --cwd ./",
     "lint": "tslint -c tslint.json 'src/**/*.ts' || true",
     "build": "gulp4 release -r --gulpfile build/gulpfile.js --cwd ./",
+    "aot:build": "gulp4 modules-aot --gulpfile build/gulpfile.js --cwd ./",
+    "module:aot": "ngc -p tsconfig-aot.json && npm run aot:build",
     "test": "test"
   },
   "repository": {
@@ -48,6 +50,7 @@
     "zone.js": "0.8.16"
   },
   "devDependencies": {
+    "@angular/compiler-cli": "^4.4.0-RC.0",
     "@types/webpack": "^3.0.10",
     "angular2-template-loader": "0.6.2",
     "awesome-typescript-loader": "3.2.2",

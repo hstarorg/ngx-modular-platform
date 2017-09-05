@@ -4,12 +4,12 @@ import 'rxjs';
 
 const moduleDepsMapping: Map<string, string[]> = new Map<string, string[]>();
 
-let instance = null;
+let instance: ModuleLoaderService = null;
 
 @Injectable()
 export class ModuleLoaderService {
 
-  public static load(moduleName) {
+  public static load(moduleName: string) {
     return instance.load(moduleName);
   }
 
@@ -30,7 +30,7 @@ export class ModuleLoaderService {
     instance = this;
   }
 
-  load(moduleName, isDepModule = false): Promise<any> {
+  load(moduleName: string, isDepModule = false): Promise<any> {
     return new Promise((resolve, reject) => {
       let path = `${AppConf.modulePath}${moduleName}/app.js`;
       this._loadCss(moduleName);
@@ -54,7 +54,7 @@ export class ModuleLoaderService {
   useModuleStyles(moduleName: string): void {
     let newkitModuleStyles = [].slice.apply(document.querySelectorAll('.dynamic-module-style'));
     let moduleDeps = this._getModuleAndDeps(moduleName);
-    newkitModuleStyles.forEach(link => {
+    newkitModuleStyles.forEach((link: HTMLLinkElement) => {
       let disabled = true;
       for (let i = moduleDeps.length - 1; i >= 0; i--) {
         if (link.className.indexOf(moduleDeps[i]) >= 0) {
@@ -92,7 +92,7 @@ export class ModuleLoaderService {
     document.querySelector('head').appendChild(link);
   }
 
-  _DomEval(code, doc?) {
+  _DomEval(code: string, doc?: Document) {
     doc = doc || document;
     let script = doc.createElement('script');
     script.text = code;

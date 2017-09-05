@@ -2,6 +2,6 @@ export {
 
 }
 
-export const COMMON_COMPONENTS = [
+export const COMMON_COMPONENTS: any[] = [
 
 ];

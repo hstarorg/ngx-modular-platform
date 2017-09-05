@@ -1,3 +1,3 @@
 module.exports = window['defineModule']('demo1', [], () => {
-  return require('./app.ts');
+  return require('./app-aot.ts');
 });

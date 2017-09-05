@@ -1,7 +1,6 @@
-require('./menu.component.styl');
-
 import { Component, OnInit, Input } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
+import './menu.component.styl';
 
 export interface MenuEntity {
   text: string;
@@ -22,7 +21,7 @@ export class MenuComponent implements OnInit {
   private menus: Array<MenuEntity>;
 
   @Input()
-  private set menuData(value) {
+  private set menuData(value: any) {
     this.processMenuData(value);
     this.menus = value;
   }
@@ -39,7 +38,7 @@ export class MenuComponent implements OnInit {
 
   }
 
-  private onMenuClick(evt, menu: MenuEntity) {
+  private onMenuClick(evt: MouseEvent, menu: MenuEntity) {
     evt.stopPropagation();
     if (menu.$hasChildren) {
       menu.$open = !menu.$open;
@@ -49,7 +48,7 @@ export class MenuComponent implements OnInit {
     }
   }
 
-  private findMenuByUrl(url: string, menus: Array<MenuEntity>) {
+  private findMenuByUrl(url: string, menus: Array<MenuEntity>): MenuEntity {
     for (let m of menus) {
       if (m.url && m.url === url) {
         return m;
@@ -63,9 +62,9 @@ export class MenuComponent implements OnInit {
     }
   }
 
-  private processMenuData(menuData: Array<MenuEntity>, parent = null) {
+  private processMenuData(menuData: Array<MenuEntity>, parent: MenuEntity = null): void {
     if (!Array.isArray(menuData)) {
-      return [];
+      return;
     }
     menuData.forEach(menu => {
       menu.$active = false;

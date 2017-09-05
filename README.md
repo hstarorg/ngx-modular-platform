@@ -15,6 +15,9 @@ npm run types
 # 运行（执行编译并监控）
 npm run dev
 
+# 生成Aot模块
+npm run module:aot
+
 # 生成发布包
 npm run build
 ```
