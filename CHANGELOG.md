@@ -1,9 +1,9 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-## v_0.1.0 (2017-03-xx)
+## v_0.1.0 (2017-09-xx)
 
-- 升级 `Angular` 到 `4.x` 版本
+- 升级 `Angular` 到 `5.x beta` 版本
 - 引入Google分析
 - 基于NProgress实现页面加载进度条
 - 增加面包屑区域
@@ -14,7 +14,7 @@ All notable changes to this project will be documented in this file.
 
 - 增加 `build` 命令：`npm run build`，用于生成线上包到 `dist` 目录中
 - 增加全局 `config` 配置
-- 增加环境变量 `env`，可以通过 `process.env === 'production'` 来判断是否是产线环境
+- 增加环境变量 `env`，可以通过 `process.env.NODE_ENV === 'production'` 来判断是否是产线环境
 - 修复 “代码变更之后无法自动刷新”
 - 优化构建，提高性能和修复bug
 

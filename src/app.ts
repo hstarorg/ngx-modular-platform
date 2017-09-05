@@ -1,6 +1,6 @@
-require('./styl/all.styl');
+import './styl/all.styl';
 
-if (process.env === 'production') {
+if (process.env.NODE_ENV === 'production') {
   require('./config/config.prod');
 } else {
   require('./config/config.dev');

@@ -40,7 +40,9 @@ module.exports = (gulp, params) => {
       },
       plugins: [
         new webpack.DefinePlugin({
-          'process.env': params.isRelease ? '"production"' : '"development"'
+          'process.env': {
+            NODE_ENV: params.isRelease ? '"production"' : '"development"'
+          }
         }),
         new ExtractTextPlugin({ filename: 'app/[name].css', disable: false, allChunks: true })
       ]
