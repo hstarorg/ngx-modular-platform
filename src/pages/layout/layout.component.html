@@ -83,6 +83,10 @@
     </ol>
   </section>
   <section class="content">
-    <router-outlet></router-outlet>
+    <j-tabset [(selected)]="selectedPage">
+      <j-tab-item *ngFor="let p of pageList" [header]="p.header" [comp]="p.comp" [name]="p.name">
+      </j-tab-item>
+    </j-tabset>
+    <!-- <router-outlet></router-outlet> -->
   </section>
 </div>

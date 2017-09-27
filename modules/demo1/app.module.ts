@@ -1,8 +1,7 @@
-import { NgModule } from '@angular/core';
-
-import { routing } from './app.routing';
 import { ALL_PAGES } from './pages';
 import { AppCommonModule } from 'app/common';
+import { NgModule } from '@angular/core';
+import { routing } from './app.routing';
 
 @NgModule({
   imports: [
@@ -10,7 +9,8 @@ import { AppCommonModule } from 'app/common';
     routing
   ],
   declarations: [...ALL_PAGES],
-  providers: []
+  providers: [],
+  entryComponents: [...ALL_PAGES]
 })
 export class AppModule {
 
