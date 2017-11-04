@@ -1,7 +1,8 @@
 {
   "name": "angular-modular-platform",
   "version": "0.0.3",
-  "description": "A development platform based Angular2, easy for multiple teams development.",
+  "description":
+    "A development platform based Angular2, easy for multiple teams development.",
   "main": "index.js",
   "types": "./src/global.d.ts",
   "scripts": {
@@ -19,12 +20,7 @@
     "type": "git",
     "url": "git+https://github.com/hstarorg/angular-modular-platform.git"
   },
-  "keywords": [
-    "angular",
-    "modular",
-    "development",
-    "platform"
-  ],
+  "keywords": ["angular", "modular", "development", "platform"],
   "author": "Jay.M.Hu",
   "license": "MIT",
   "bugs": {
@@ -32,15 +28,15 @@
   },
   "homepage": "https://github.com/hstarorg/ng2-modular-platform#readme",
   "dependencies": {
-    "@angular/common": "5.0.0-beta.3",
-    "@angular/compiler": "5.0.0-beta.3",
-    "@angular/core": "5.0.0-beta.3",
-    "@angular/forms": "5.0.0-beta.3",
-    "@angular/http": "5.0.0-beta.3",
-    "@angular/platform-browser": "5.0.0-beta.3",
-    "@angular/platform-browser-dynamic": "5.0.0-beta.3",
-    "@angular/router": "5.0.0-beta.3",
-    "@angular/animations": "5.0.0-beta.3",
+    "@angular/common": "5.0.0",
+    "@angular/compiler": "5.0.0",
+    "@angular/core": "5.0.0",
+    "@angular/forms": "5.0.0",
+    "@angular/http": "5.0.0",
+    "@angular/platform-browser": "5.0.0",
+    "@angular/platform-browser-dynamic": "5.0.0",
+    "@angular/router": "5.0.0",
+    "@angular/animations": "5.0.0",
     "admin-lte": "2.3.11",
     "bootstrap": "3.3.7",
     "font-awesome": "^4.7.0",
