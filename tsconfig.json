@@ -29,7 +29,8 @@
   "exclude": [
     "*-aot.ts",
     "node_modules",
-    "types"
+    "types",
+    "docs"
   ],
   "awesomeTypescriptLoaderOptions": {
     "forkChecker": true,

@@ -35,5 +35,9 @@
 .j-menu .treeview.open > a {
   color: #fff;
 }
+.j-tabset .nav.nav-tabs li {
+  min-width: 80px;
+  text-align: center;
+}
 
 /*# sourceMappingURL=app.css.map*/
