@@ -3,7 +3,6 @@
   "version": "0.0.3",
   "description": "A development platform based Angular2, easy for multiple teams development.",
   "main": "index.js",
-  "types": "./src/global.d.ts",
   "scripts": {
     "types": "gulp4 build:types --gulpfile build/gulpfile.js --cwd ./",
     "dev:app": "gulp4 app --gulpfile build/gulpfile.js --cwd ./",
@@ -51,7 +50,7 @@
   },
   "devDependencies": {
     "@angular/compiler-cli": "^5.0.2",
-    "@types/webpack": "^3.0.10",
+    "@types/node": "^8.0.53",
     "angular2-template-loader": "0.6.2",
     "awesome-typescript-loader": "3.4.0",
     "browser-sync": "2.18.13",

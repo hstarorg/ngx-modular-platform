@@ -1,4 +1,4 @@
-require('./styl/all.styl');
+import './styl/all.styl';
 
 import { AppCommonModule } from './common.module';
 

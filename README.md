@@ -1,7 +1,7 @@
 # angular-modular-platform
 A development platform based Angular2, easy for multiple teams development.
 
-基于Ng2的模块化开发平台。
+基于 `Angular` 的模块化开发平台。
 
 # Usage
 
