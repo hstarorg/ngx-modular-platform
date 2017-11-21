@@ -35,6 +35,21 @@ export class TabsetComponent implements OnInit {
     });
   }
 
+  public removeTab(evt: MouseEvent, tab: TabItemComponent, $event) {
+    // tslint:disable-next-line:no-unused-expression
+    evt && evt.stopPropagation && evt.stopPropagation();
+    let findTabIdx = this.tabItems.indexOf(tab);
+    let findTab = this.tabItems[findTabIdx];
+    // 主动释放自己
+    findTab.destroy();
+    this.tabItems.splice(findTabIdx, 1);
+    if (this.selected === findTab.name) {
+      let selected = this.tabItems[Math.min(findTabIdx, this.tabItems.length - 1)].name;
+      this.selected = selected;
+      this.selectedChange.emit(this.selected);
+    }
+  }
+
   public setActiveItem(tabItem: TabItemComponent) {
     if (this._currentTabItem === tabItem) {
       return;

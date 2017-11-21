@@ -9,6 +9,7 @@ interface PageEntity {
   header: string;
   comp: any;
   name: string;
+  closable?: boolean;
 }
 
 @Component({
@@ -53,7 +54,8 @@ export class LayoutComponent implements OnInit {
         this.pageList.push({
           header: `页面${idx}`,
           comp: pageComponent,
-          name: `page${idx}`
+          name: `page${idx}`,
+          closable: true
         });
         setTimeout(() => {
           this.selectedPage = `page${idx}`;

@@ -1,7 +1,10 @@
 <div class="j-tabset nav-tabs-custom">
   <ul class="nav nav-tabs">
     <li *ngFor="let tab of tabItems" [ngClass]="{active: tab.active}" (click)="setActiveItem(tab)">
-      <a href="javascript:;"> <i *ngIf="tab.icon" [ngClass]="tab.icon"></i> {{tab.header}}</a>
+      <a href="javascript:;">
+        <i *ngIf="tab.icon" [ngClass]="tab.icon"></i> {{tab.header}}
+        <i [hidden]="!tab.closable" (click)="removeTab($event, tab)" class="fa fa-times-circle tab-close"></i>
+      </a>
     </li>
   </ul>
   <div class="tab-content">

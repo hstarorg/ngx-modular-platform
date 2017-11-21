@@ -1,9 +1,13 @@
 <header class="main-header">
   <a href="" class="logo">
     <!-- mini logo for sidebar mini 50x50 pixels -->
-    <span class="logo-mini"><b>MP</b></span>
+    <span class="logo-mini">
+      <b>MP</b>
+    </span>
     <!-- logo for regular state and mobile devices -->
-    <span class="logo-lg"><b>M</b>ODULAR<b>P</b>LATFORM</span>
+    <span class="logo-lg">
+      <b>M</b>ODULAR
+      <b>P</b>LATFORM</span>
   </a>
   <!-- Header Navbar: style can be found in header.less -->
   <nav class="navbar navbar-static-top">
@@ -22,7 +26,8 @@
         </li>
         <li class="dropdown user user-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <span class="hidden-xs"><i class="fa fa-free-code-camp"></i> 捐助我</span>
+            <span class="hidden-xs">
+              <i class="fa fa-free-code-camp"></i> 捐助我</span>
           </a>
           <ul class="dropdown-menu praise-ul">
             <!-- User image -->
@@ -67,7 +72,8 @@
       <div class="input-group">
         <input type="text" name="q" class="form-control" placeholder="Search...">
         <span class="input-group-btn">
-          <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+          <button type="submit" name="search" id="search-btn" class="btn btn-flat">
+            <i class="fa fa-search"></i>
           </button>
         </span>
       </div>
@@ -78,13 +84,16 @@
 <div class="content-wrapper">
   <section class="content-header">
     <ol class="breadcrumb">
-      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li>
+        <a href="#">
+          <i class="fa fa-dashboard"></i> Home</a>
+      </li>
       <li class="active">Dashboard</li>
     </ol>
   </section>
   <section class="content">
     <j-tabset [(selected)]="selectedPage">
-      <j-tab-item *ngFor="let p of pageList" [header]="p.header" [comp]="p.comp" [name]="p.name">
+      <j-tab-item *ngFor="let p of pageList" [header]="p.header" [comp]="p.comp" [name]="p.name" [closable]="p.closable">
       </j-tab-item>
     </j-tabset>
     <!-- <router-outlet></router-outlet> -->

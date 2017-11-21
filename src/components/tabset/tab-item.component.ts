@@ -37,6 +37,7 @@ export class TabItemComponent implements OnInit, OnChanges {
   @Input() header: string;
   @Input() icon: string;
   @Input() comp: any;
+  @Input() closable = false;
   @ViewChild('dynamicComponentContainer', { read: ViewContainerRef }) dynamicComponentContainer: ViewContainerRef;
 
   constructor(
@@ -63,12 +64,20 @@ export class TabItemComponent implements OnInit, OnChanges {
     }
   }
 
+  public destroy() {
+    let el = this.elementRef.nativeElement as HTMLElement;
+    // tslint:disable-next-line:no-unused-expression
+    el.parentNode && (el.parentNode.removeChild(el));
+    console.log(el);
+  }
+
   private loadComponent(component: any) {
     let context = this.parentContexts.getContext(PRIMARY_OUTLET);
     let injector = ReflectiveInjector.fromResolvedProviders([], this.dynamicComponentContainer.injector);
     const resolver = context.resolver || this.resolver;
     let factory = resolver.resolveComponentFactory(component);
-    let componentIns = factory.create(injector);
-    this.dynamicComponentContainer.insert(componentIns.hostView);
+    //   let componentIns = factory.create(injector);
+    //   this.dynamicComponentContainer.insert(componentIns.hostView);
+    this.dynamicComponentContainer.createComponent(factory);
   }
 }
