@@ -68,7 +68,6 @@ export class TabItemComponent implements OnInit, OnChanges {
     let el = this.elementRef.nativeElement as HTMLElement;
     // tslint:disable-next-line:no-unused-expression
     el.parentNode && (el.parentNode.removeChild(el));
-    console.log(el);
   }
 
   private loadComponent(component: any) {

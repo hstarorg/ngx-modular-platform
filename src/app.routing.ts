@@ -1,17 +1,16 @@
-import { ModuleWithProviders, ApplicationRef } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { Http, ConnectionBackend } from '@angular/http';
-import { ModuleLoaderService } from 'app/common';
-
-import { AuthGuard } from './services';
-
+import { ApplicationRef, ModuleWithProviders } from '@angular/core';
+import { ConnectionBackend, Http } from '@angular/http';
 import {
-  NotFoundComponent,
+  HomeComponent,
+  LayoutComponent,
   LoginComponent,
   LogoutComponent,
-  LayoutComponent,
-  HomeComponent
+  NotFoundComponent
 } from './pages';
+import { RouterModule, Routes } from '@angular/router';
+
+import { AuthGuard } from './services';
+import { ModuleLoaderService } from 'app/common';
 
 const loadModule = (moduleName: string) => {
   return () => {

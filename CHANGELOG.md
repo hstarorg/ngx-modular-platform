@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## v_0.2.0 (2017-xx-xx)
+
+- 实现多Tab页动态加载
+- Tab页增加名称属性，同名Tab只允许打开一个
+
 ## v_0.1.0 (2017-11-21)
 
 - 升级 `Angular` 到 `5.x beta` 版本

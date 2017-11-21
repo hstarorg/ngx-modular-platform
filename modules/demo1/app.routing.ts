@@ -1,10 +1,10 @@
-import { ModuleWithProviders } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-
 import {
   Page1Component,
   Page2Component
 } from './pages';
+import { RouterModule, Routes } from '@angular/router';
+
+import { ModuleWithProviders } from '@angular/core';
 
 const appRoutes: Routes = [
   { path: '', component: Page1Component },

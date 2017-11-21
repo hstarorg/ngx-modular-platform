@@ -59,7 +59,6 @@ export class TabsetComponent implements OnInit {
     }
     this._currentTabItem = tabItem;
     this._currentTabItem.active = true;
-    console.log(this._currentTabItem.innerName);
     this.selectedChange.emit(this._currentTabItem.innerName);
   }
 

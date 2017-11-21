@@ -44,21 +44,26 @@ export class LayoutComponent implements OnInit {
     this.router.events.subscribe(evt => {
       if (evt instanceof NavigationEnd) {
         let pageComponent;
+        let pageName;
         try {
           let nextRoute = this.route.children[0].children[0];
+          pageName = nextRoute.routeConfig.path;
           pageComponent = nextRoute.component;
         } catch (e) {
+          pageName = `page-${this.pageList.length}`;
           pageComponent = NotFoundComponent;
         }
         let idx = this.pageList.length + 1;
-        this.pageList.push({
-          header: `页面${idx}`,
-          comp: pageComponent,
-          name: `page${idx}`,
-          closable: true
-        });
+        if (!this.pageList.find(x => x.name === pageName)) {
+          this.pageList.push({
+            header: `页面${idx}`,
+            comp: pageComponent,
+            name: pageName,
+            closable: true
+          });
+        }
         setTimeout(() => {
-          this.selectedPage = `page${idx}`;
+          this.selectedPage = pageName;
         });
       }
     });
