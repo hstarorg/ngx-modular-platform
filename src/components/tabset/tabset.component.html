@@ -8,6 +8,7 @@
     </li>
   </ul>
   <div class="tab-content">
-    <ng-content></ng-content>
+    <j-tab-item *ngFor="let p of data" [header]="p.header" [comp]="p.comp" [name]="p.name" [closable]="p.closable">
+    </j-tab-item>
   </div>
 </div>

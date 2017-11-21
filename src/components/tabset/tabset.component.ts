@@ -14,6 +14,8 @@ export class TabsetComponent implements OnInit {
   private _currentTabItem: TabItemComponent;
   public tabItems: TabItemComponent[] = [];
 
+  @Input() data: any[] = [];
+  @Output() dataChange = new EventEmitter();
   @Input() selected: string;
   @Input() tabsLeft = false;
   @Output() selectedChange = new EventEmitter();
@@ -43,6 +45,8 @@ export class TabsetComponent implements OnInit {
     // 主动释放自己
     findTab.destroy();
     this.tabItems.splice(findTabIdx, 1);
+    this.data.splice(findTabIdx, 1);
+    this.dataChange.emit(this.data);
     if (this.selected === findTab.name) {
       let selected = this.tabItems[Math.min(findTabIdx, this.tabItems.length - 1)].name;
       this.selected = selected;

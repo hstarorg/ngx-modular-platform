@@ -2,6 +2,7 @@ import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 import { HomeComponent } from '../home/home.component';
+import { Location } from '@angular/common';
 import { MenuService } from '../../services';
 import { NotFoundComponent } from '../404/notfound.component';
 
@@ -26,6 +27,7 @@ export class LayoutComponent implements OnInit {
   public selectedPage = 'page1';
 
   constructor(
+    private location: Location,
     private router: Router,
     private route: ActivatedRoute,
     private menuService: MenuService
@@ -47,10 +49,10 @@ export class LayoutComponent implements OnInit {
         let pageName;
         try {
           let nextRoute = this.route.children[0].children[0];
-          pageName = nextRoute.routeConfig.path;
+          pageName = this.location.path();
           pageComponent = nextRoute.component;
         } catch (e) {
-          pageName = `page-${this.pageList.length}`;
+          pageName = '$$notfound';
           pageComponent = NotFoundComponent;
         }
         let idx = this.pageList.length + 1;
