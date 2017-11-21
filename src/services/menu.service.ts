@@ -20,7 +20,7 @@ export class MenuService {
         { text: 'Demo Page2', icon: 'fa fa-lock', url: '/demo1/page2' }
       ]
     }
-  ]
+  ];
 
   constructor() { }
 

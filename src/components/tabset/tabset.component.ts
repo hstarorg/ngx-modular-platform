@@ -14,14 +14,9 @@ export class TabsetComponent implements OnInit {
   private _currentTabItem: TabItemComponent;
   public tabItems: TabItemComponent[] = [];
 
-  @Input()
-  public selected: string;
-
-  @Input()
-  public tabsLeft: boolean = false;
-
-  @Output()
-  public selectedChange = new EventEmitter();
+  @Input() selected: string;
+  @Input() tabsLeft = false;
+  @Output() selectedChange = new EventEmitter();
 
   constructor() { }
 

@@ -39,6 +39,6 @@ gulp.task('bs-reload', done => {
 
 gulp.task('build', gulp.parallel('vendor', 'app', 'modules'));
 
-gulp.task('release', gulp.series('clean', gulp.parallel('vendor', gulp.series('app', 'modules'))));
+gulp.task('release', gulp.series('clean', gulp.parallel('vendor', 'app', 'modules-aot')));
 
 gulp.task('default', gulp.series('clean', 'build', 'serve'));

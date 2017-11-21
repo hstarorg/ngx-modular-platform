@@ -22,7 +22,7 @@ import { TabsetComponent } from './tabset.component';
 export class TabItemComponent implements OnInit, OnChanges {
 
   public innerName: string;
-  private _active: boolean = false;
+  private _active = false;
   public get active() { return this._active; }
   public set active(val) {
     this._active = val;
@@ -33,20 +33,11 @@ export class TabItemComponent implements OnInit, OnChanges {
     }
   }
 
-  @Input()
-  public name: string;
-
-  @Input()
-  public header: string;
-
-  @Input()
-  public icon: string;
-
-  @Input()
-  public comp: any;
-
-  @ViewChild('dynamicComponentContainer', { read: ViewContainerRef })
-  public dynamicComponentContainer: ViewContainerRef;
+  @Input() name: string;
+  @Input() header: string;
+  @Input() icon: string;
+  @Input() comp: any;
+  @ViewChild('dynamicComponentContainer', { read: ViewContainerRef }) dynamicComponentContainer: ViewContainerRef;
 
   constructor(
     private elementRef: ElementRef,

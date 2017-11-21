@@ -1,7 +1,7 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-## v_0.1.0 (2017-09-xx)
+## v_0.1.0 (2017-11-21)
 
 - 升级 `Angular` 到 `5.x beta` 版本
 - 引入Google分析
@@ -9,6 +9,8 @@ All notable changes to this project will be documented in this file.
 - 增加面包屑区域
 - 优化菜单路由关联
 - 优化构建，忽略不必要的目录监控
+- AOT优化，更高效的执行模式
+- `ts-lint` 检测完全通过
 
 ## v_0.0.3 (2017.01.06)
 

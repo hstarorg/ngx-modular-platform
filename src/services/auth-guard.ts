@@ -1,8 +1,16 @@
-import { Injectable } from '@angular/core';
 import {
-  Router, CanActivate, CanLoad, CanActivateChild, ActivatedRouteSnapshot, RouterStateSnapshot,
-  NavigationStart, NavigationEnd, NavigationError
+  ActivatedRouteSnapshot,
+  CanActivate,
+  CanActivateChild,
+  CanLoad,
+  NavigationEnd,
+  NavigationError,
+  NavigationStart,
+  Router,
+  RouterStateSnapshot
 } from '@angular/router';
+
+import { Injectable } from '@angular/core';
 import { ModuleLoaderService } from 'app/common';
 
 @Injectable()
@@ -18,6 +26,7 @@ export class AuthGuard implements CanActivate, CanActivateChild {
         NProgress.start();
       } else if (evt instanceof NavigationEnd || evt instanceof NavigationError) {
         let ga = window['ga'];
+        // tslint:disable-next-line:no-unused-expression
         ga && ga('send', 'pageview', this.router.url);
         NProgress.done();
       }

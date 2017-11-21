@@ -1,6 +1,8 @@
-import { Injectable, Inject } from '@angular/core';
-import { Http } from '@angular/http';
 import 'rxjs';
+
+import { Inject, Injectable } from '@angular/core';
+
+import { Http } from '@angular/http';
 
 const moduleDepsMapping: Map<string, string[]> = new Map<string, string[]>();
 
@@ -24,7 +26,7 @@ export class ModuleLoaderService {
       const mod = callback();
       return mod;
     });
-  };
+  }
 
   constructor(private http: Http) {
     instance = this;
@@ -72,7 +74,7 @@ export class ModuleLoaderService {
       return [];
     }
     if (!moduleDepsMapping.has(moduleName)) {
-      moduleName && console.warn(`module ${moduleName} not found.`);
+      console.warn(`module ${moduleName} not found.`);
       return [];
     }
     let result = [moduleName];

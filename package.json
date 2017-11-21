@@ -1,11 +1,11 @@
 {
-  "name": "angular-modular-platform",
-  "version": "0.0.3",
-  "description": "A development platform based Angular2, easy for multiple teams development.",
+  "name": "ngx-modular-platform",
+  "version": "0.1.0",
+  "description": "A development platform based Angular, easy for multiple teams development.",
   "main": "index.js",
   "scripts": {
     "types": "gulp4 build:types --gulpfile build/gulpfile.js --cwd ./",
-    "lint": "tslint -c tslint.json 'src/**/*.ts' || true",
+    "lint": "tslint -c tslint.json 'src/**/*.ts' 'modules/**/*.ts' || true",
     "modules": "gulp4 modules --gulpfile build/gulpfile.js --cwd ./",
     "modules:ngc": "ngc -p tsconfig-aot.json",
     "modules:aot": "npm run modules:ngc && gulp4 modules-aot -r --gulpfile build/gulpfile.js --cwd ./",
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hstarorg/angular-modular-platform.git"
+    "url": "git+https://github.com/hstarorg/ngx-modular-platform.git"
   },
   "keywords": [
     "angular",
@@ -29,9 +29,9 @@
   "author": "Jay.M.Hu",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hstarorg/ng2-modular-platform/issues"
+    "url": "https://github.com/hstarorg/ngx-modular-platform/issues"
   },
-  "homepage": "https://github.com/hstarorg/ng2-modular-platform#readme",
+  "homepage": "https://github.com/hstarorg/ngx-modular-platform#readme",
   "dependencies": {
     "@angular/common": "5.0.2",
     "@angular/compiler": "5.0.2",

@@ -6,9 +6,9 @@ import { MenuService } from '../../services';
 import { NotFoundComponent } from '../404/notfound.component';
 
 interface PageEntity {
-  header: string,
-  comp: any,
-  name: string
+  header: string;
+  comp: any;
+  name: string;
 }
 
 @Component({

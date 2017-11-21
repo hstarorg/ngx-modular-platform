@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
 import './menu.component.styl';
+
+import { Component, Input, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 
 export interface MenuEntity {
   text: string;
@@ -42,8 +43,7 @@ export class MenuComponent implements OnInit {
     evt.stopPropagation();
     if (menu.$hasChildren) {
       menu.$open = !menu.$open;
-    }
-    else {
+    } else {
       this.router.navigate([menu.url]);
     }
   }
