@@ -39,5 +39,15 @@
   min-width: 80px;
   text-align: center;
 }
+.j-tabset .nav.nav-tabs .tab-close {
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.j-tabset .nav.nav-tabs .tab-close:hover {
+  color: #c9302c;
+}
 
 /*# sourceMappingURL=app.css.map*/
