@@ -4,3 +4,4 @@ dist/
 aot/
 npm-debug.log
 package-lock.json
+aot-dist/

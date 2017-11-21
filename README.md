@@ -8,15 +8,16 @@ A development platform based Angular2, easy for multiple teams development.
 ```bash
 # 初始化依赖 
 npm i
-
 # 生成type define文件（如果要运行框架代码，请务必执行该命令，否则ts-loader会有一堆错误）
 npm run types
 
 # 运行（执行编译并监控）
 npm run dev
 
-# 生成Aot模块
-npm run module:aot
+# 模块相关命令
+npm run modules # JIT编译模块
+npm run modules:ngc # angular-compiler-cli 编译模块
+npm run module:aot # Aot编译模块（会先执行 modules:ngc）
 
 # 生成发布包
 npm run build

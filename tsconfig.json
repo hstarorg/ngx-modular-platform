@@ -6,10 +6,11 @@
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "noImplicitAny": true,
+    "noImplicitAny": false,
     "suppressImplicitAnyIndexErrors": true,
     "sourceMap": false,
     "noEmitOnError": true,
+    "traceResolution": false,
     "lib": [
       "dom",
       "es2015",
@@ -19,7 +20,10 @@
     ],
     "typeRoots": [
       "node_modules/@types",
-      "types"
+      "./types"
+    ],
+    "types": [
+      "node"
     ]
   },
   "include": [
@@ -30,7 +34,9 @@
     "*-aot.ts",
     "node_modules",
     "types",
-    "docs"
+    "docs",
+    "aot",
+    "aot-dist"
   ],
   "awesomeTypescriptLoaderOptions": {
     "forkChecker": true,

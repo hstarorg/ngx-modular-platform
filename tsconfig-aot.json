@@ -1,13 +1,14 @@
 {
   "extends": "./tsconfig.json",
   "include": [
-    "modules/**/*.ts"
+    "modules"
   ],
   "exclude": [
-    "src/**/*.ts"
+    "aot-dist",
+    "**/*-aot.ts"
   ],
   "compilerOptions": {
-    "outDir": "aot/dist"
+    "outDir": "aot-dist"
   },
   "angularCompilerOptions": {
     "genDir": "aot",
