@@ -1,3 +1,4 @@
+import { Injectable } from '@angular/core';
 import {
   ActivatedRouteSnapshot,
   CanActivate,
@@ -9,13 +10,10 @@ import {
   Router,
   RouterStateSnapshot
 } from '@angular/router';
-
-import { Injectable } from '@angular/core';
 import { ModuleLoaderService } from 'app/common';
 
 @Injectable()
 export class AuthGuard implements CanActivate, CanActivateChild {
-
   constructor(
     private router: Router,
     private moduleLoader: ModuleLoaderService
@@ -24,7 +22,10 @@ export class AuthGuard implements CanActivate, CanActivateChild {
       let NProgress = (window as any).NProgress;
       if (evt instanceof NavigationStart) {
         NProgress.start();
-      } else if (evt instanceof NavigationEnd || evt instanceof NavigationError) {
+      } else if (
+        evt instanceof NavigationEnd ||
+        evt instanceof NavigationError
+      ) {
         let ga = window['ga'];
         // tslint:disable-next-line:no-unused-expression
         ga && ga('send', 'pageview', this.router.url);
@@ -33,7 +34,11 @@ export class AuthGuard implements CanActivate, CanActivateChild {
     });
   }
 
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot, isChild = false): Promise<boolean> {
+  canActivate(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot,
+    isChild = false
+  ): Promise<boolean> {
     let moduleName = state.url.split('/')[1];
     if (!isChild) {
       this.moduleLoader.useModuleStyles(moduleName);
@@ -41,7 +46,10 @@ export class AuthGuard implements CanActivate, CanActivateChild {
     return Promise.resolve(true);
   }
 
-  canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<boolean> {
+  canActivateChild(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): Promise<boolean> {
     return this.canActivate(route, state, true);
   }
 }

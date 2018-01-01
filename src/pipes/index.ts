@@ -1,3 +1,1 @@
-export const ALL_PIPES: any[] = [
-
-];
+export const ALL_PIPES: any[] = [];

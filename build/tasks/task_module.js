@@ -35,29 +35,41 @@ module.exports = (gulp, params) => {
             NODE_ENV: params.isRelease ? '"production"' : '"development"'
           }
         }),
-        new ExtractTextPlugin({ filename: 'modules/[name]/app.css', disable: false, allChunks: true })
+        new ExtractTextPlugin({
+          filename: 'modules/[name]/app.css',
+          disable: false,
+          allChunks: true
+        })
       ]
     });
     if (params.isRelease) {
-      opt.plugins.push(new UglifyJsPlugin({
-        compress: {
-          warnings: false
-        }
-      }));
+      opt.plugins.push(
+        new UglifyJsPlugin({
+          compress: {
+            warnings: false
+          }
+        })
+      );
     }
     const compiler = webpack(opt);
     if (params.isRelease) {
       compiler.run((err, stats) => {
         util.showWebpackError(err, stats);
-        gulp.series('bs-reload')();
         done();
       });
     } else {
-      compiler.watch({ aggregateTimeout: 500, poll: false, ignored: [/src/, /dist/, /node_modules/] }, (err, stats) => {
-        util.showWebpackError(err, stats);
-        gulp.series('bs-reload')();
-        done();
-      });
+      compiler.watch(
+        {
+          aggregateTimeout: 500,
+          poll: false,
+          ignored: [/src/, /dist/, /node_modules/]
+        },
+        (err, stats) => {
+          util.showWebpackError(err, stats);
+          gulp.series('bs-reload')();
+          done();
+        }
+      );
     }
   });
 

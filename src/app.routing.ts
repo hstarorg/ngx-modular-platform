@@ -1,5 +1,7 @@
 import { ApplicationRef, ModuleWithProviders } from '@angular/core';
 import { ConnectionBackend, Http } from '@angular/http';
+import { RouterModule, Routes } from '@angular/router';
+import { ModuleLoaderService } from 'app/common';
 import {
   HomeComponent,
   LayoutComponent,
@@ -7,10 +9,7 @@ import {
   LogoutComponent,
   NotFoundComponent
 } from './pages';
-import { RouterModule, Routes } from '@angular/router';
-
 import { AuthGuard } from './services';
-import { ModuleLoaderService } from 'app/common';
 
 const loadModule = (moduleName: string) => {
   return () => {
@@ -19,7 +18,7 @@ const loadModule = (moduleName: string) => {
 };
 
 // 定义模块 - URL 映射
-let modules: Array<{ path: string, module: string }> = [
+let modules: Array<{ path: string; module: string }> = [
   { path: 'demo1', module: 'demo1' }
 ];
 
@@ -34,17 +33,28 @@ modules.forEach(m => {
   });
 });
 
-const appRoutes: Routes = [{
-  path: 'login', component: LoginComponent
-}, {
-  path: 'logout', component: LogoutComponent
-}, {
-  path: '', component: LayoutComponent, canActivate: [AuthGuard], canActivateChild: [AuthGuard],
-  children: [
-    { path: '', component: HomeComponent },
-    ...dynamicRoutes,
-    { path: '**', component: NotFoundComponent }
-  ]
-}];
+const appRoutes: Routes = [
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'logout',
+    component: LogoutComponent
+  },
+  {
+    path: '',
+    component: LayoutComponent,
+    canActivate: [AuthGuard],
+    canActivateChild: [AuthGuard],
+    children: [
+      { path: '', component: HomeComponent },
+      ...dynamicRoutes,
+      { path: '**', component: NotFoundComponent }
+    ]
+  }
+];
 
-export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes, { useHash: true });
+export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes, {
+  useHash: true
+});

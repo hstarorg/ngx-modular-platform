@@ -1,4 +1,3 @@
-import { ChildrenOutletContexts, PRIMARY_OUTLET } from '@angular/router';
 import {
   Component,
   ComponentFactoryResolver,
@@ -10,9 +9,9 @@ import {
   Renderer2,
   SimpleChanges,
   ViewChild,
-  ViewContainerRef,
+  ViewContainerRef
 } from '@angular/core';
-
+import { ChildrenOutletContexts, PRIMARY_OUTLET } from '@angular/router';
 import { TabsetComponent } from './tabset.component';
 
 @Component({
@@ -20,10 +19,11 @@ import { TabsetComponent } from './tabset.component';
   templateUrl: 'tab-item.component.html'
 })
 export class TabItemComponent implements OnInit, OnChanges {
-
   public innerName: string;
   private _active = false;
-  public get active() { return this._active; }
+  public get active() {
+    return this._active;
+  }
   public set active(val) {
     this._active = val;
     if (val) {
@@ -38,7 +38,8 @@ export class TabItemComponent implements OnInit, OnChanges {
   @Input() icon: string;
   @Input() comp: any;
   @Input() closable = false;
-  @ViewChild('dynamicComponentContainer', { read: ViewContainerRef }) dynamicComponentContainer: ViewContainerRef;
+  @ViewChild('dynamicComponentContainer', { read: ViewContainerRef })
+  dynamicComponentContainer: ViewContainerRef;
 
   constructor(
     private elementRef: ElementRef,
@@ -46,8 +47,7 @@ export class TabItemComponent implements OnInit, OnChanges {
     private tabset: TabsetComponent,
     private resolver: ComponentFactoryResolver,
     private parentContexts: ChildrenOutletContexts
-  ) {
-  }
+  ) {}
 
   ngOnInit() {
     this.tabset.tabItems.push(this);
@@ -67,12 +67,15 @@ export class TabItemComponent implements OnInit, OnChanges {
   public destroy() {
     let el = this.elementRef.nativeElement as HTMLElement;
     // tslint:disable-next-line:no-unused-expression
-    el.parentNode && (el.parentNode.removeChild(el));
+    el.parentNode && el.parentNode.removeChild(el);
   }
 
   private loadComponent(component: any) {
     let context = this.parentContexts.getContext(PRIMARY_OUTLET);
-    let injector = ReflectiveInjector.fromResolvedProviders([], this.dynamicComponentContainer.injector);
+    let injector = ReflectiveInjector.fromResolvedProviders(
+      [],
+      this.dynamicComponentContainer.injector
+    );
     const resolver = context.resolver || this.resolver;
     let factory = resolver.resolveComponentFactory(component);
     //   let componentIns = factory.create(injector);

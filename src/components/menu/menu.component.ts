@@ -18,7 +18,6 @@ export interface MenuEntity {
   templateUrl: 'menu.component.html'
 })
 export class MenuComponent implements OnInit {
-
   private menus: Array<MenuEntity>;
 
   @Input()
@@ -35,9 +34,7 @@ export class MenuComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
 
   private onMenuClick(evt: MouseEvent, menu: MenuEntity) {
     evt.stopPropagation();
@@ -62,7 +59,10 @@ export class MenuComponent implements OnInit {
     }
   }
 
-  private processMenuData(menuData: Array<MenuEntity>, parent: MenuEntity = null): void {
+  private processMenuData(
+    menuData: Array<MenuEntity>,
+    parent: MenuEntity = null
+  ): void {
     if (!Array.isArray(menuData)) {
       return;
     }

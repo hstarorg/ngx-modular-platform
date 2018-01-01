@@ -1,16 +1,22 @@
 import './tabset.component.styl';
 
-import { AfterViewInit, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
-
+import {
+  AfterViewInit,
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+  SimpleChanges
+} from '@angular/core';
 import { TabItemComponent } from './tab-item.component';
 
 @Component({
   selector: 'j-tabset',
   templateUrl: 'tabset.component.html'
 })
-
 export class TabsetComponent implements OnInit {
-
   private _currentTabItem: TabItemComponent;
   public tabItems: TabItemComponent[] = [];
 
@@ -20,9 +26,9 @@ export class TabsetComponent implements OnInit {
   @Input() tabsLeft = false;
   @Output() selectedChange = new EventEmitter();
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() { }
+  ngOnInit() {}
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes.selected) {
@@ -48,7 +54,9 @@ export class TabsetComponent implements OnInit {
     this.data.splice(findTabIdx, 1);
     this.dataChange.emit(this.data);
     if (this.selected === findTab.name) {
-      let selected = this.tabItems[Math.min(findTabIdx, this.tabItems.length - 1)].name;
+      let selected = this.tabItems[
+        Math.min(findTabIdx, this.tabItems.length - 1)
+      ].name;
       this.selected = selected;
       this.selectedChange.emit(this.selected);
     }
@@ -67,7 +75,8 @@ export class TabsetComponent implements OnInit {
   }
 
   private _processSelectedChange(name: string) {
-    let findTabItem = this.tabItems.find(x => x.innerName === name) || this.tabItems[0];
+    let findTabItem =
+      this.tabItems.find(x => x.innerName === name) || this.tabItems[0];
     if (findTabItem) {
       this.setActiveItem(findTabItem);
     }
