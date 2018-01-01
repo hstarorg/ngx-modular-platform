@@ -1,5 +1,5 @@
-declare const defineModul2: Function;
-interface AppConf {
+declare const defineModule: Function;
+declare const AppConf: {
   modulePath: string;
   menuData: Array<any>;
-}
+};

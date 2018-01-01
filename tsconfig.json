@@ -13,14 +13,10 @@
     "traceResolution": false,
     "lib": [
       "dom",
-      "es2015",
-      "es2016",
-      "es2017",
-      "esnext"
+      "es2017"
     ],
     "typeRoots": [
-      "node_modules/@types",
-      "./types"
+      "node_modules/@types"
     ],
     "types": [
       "node"
@@ -28,12 +24,12 @@
   },
   "include": [
     "src",
-    "module"
+    "module",
+    "types"
   ],
   "exclude": [
     "*-aot.ts",
     "node_modules",
-    "types",
     "docs",
     "aot",
     "aot-dist"

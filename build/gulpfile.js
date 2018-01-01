@@ -1,5 +1,5 @@
 require('shelljs/global');
-const gulp = require('gulp4');
+const gulp = require('gulp');
 const concat = require('gulp-concat');
 const browserSync = require('browser-sync');
 const historyApiFallback = require('connect-history-api-fallback');
@@ -10,7 +10,13 @@ const params = {
   isRelease
 };
 
-['task_vendor', 'task_app', 'task_module', 'task_module_aot', 'task_module_rollup'].forEach(f => {
+[
+  'task_vendor',
+  'task_app',
+  'task_module',
+  'task_module_aot',
+  'task_module_rollup'
+].forEach(f => {
   require(`./tasks/${f}`)(gulp, params);
 });
 
@@ -39,6 +45,9 @@ gulp.task('bs-reload', done => {
 
 gulp.task('build', gulp.parallel('vendor', 'app', 'modules'));
 
-gulp.task('release', gulp.series('clean', gulp.parallel('vendor', 'app', 'modules-aot')));
+gulp.task(
+  'release',
+  gulp.series('clean', gulp.parallel('vendor', 'app', 'modules-aot'))
+);
 
 gulp.task('default', gulp.series('clean', 'build', 'serve'));
