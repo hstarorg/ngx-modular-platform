@@ -29,12 +29,14 @@
 .navbar-nav > .user-menu > .dropdown-menu > li.user-header {
   height: auto;
 }
+
 .j-menu:.sidebar-menu .ul-active .treeview-menu {
   display: block;
 }
 .j-menu .treeview.open > a {
   color: #fff;
 }
+
 .j-tabset .nav.nav-tabs li {
   min-width: 80px;
   text-align: center;
@@ -49,5 +51,6 @@
 .j-tabset .nav.nav-tabs .tab-close:hover {
   color: #c9302c;
 }
+
 
 /*# sourceMappingURL=app.css.map*/
