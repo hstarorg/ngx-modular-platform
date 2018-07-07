@@ -5,11 +5,13 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   devtool: 'cheap-source-map',
-  cache: true,
-  profile: true,
-  optimization: {},
+  target: 'web',
+  mode: 'development',
+  stats: 'errors-only',
+  cache: true, // Default in watch mode
   resolve: {
-    extensions: ['.ts', '.js']
+    extensions: ['.ts', '.js'],
+    alias: {}
   },
   watchOptions: {
     ignored: /node_modules/

@@ -40,7 +40,7 @@ module.exports = (gulp, params) => {
       ]
     });
     if (params.isRelease) {
-      opt.optimization.minimize = true;
+      opt.mode = 'production';
     }
     const compiler = webpack(opt);
     if (params.isRelease) {
