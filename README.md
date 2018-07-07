@@ -17,7 +17,7 @@ npm run dev
 # 模块相关命令
 npm run modules # JIT编译模块
 npm run modules:ngc # angular-compiler-cli 编译模块
-npm run module:aot # AOT编译模块（会先执行 modules:ngc）
+npm run modules:aot # AOT编译模块（会先执行 modules:ngc）
 
 # 生成Demo发布包
 npm run build

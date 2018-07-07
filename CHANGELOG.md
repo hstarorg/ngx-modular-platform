@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file.
 
 - 升级 `Angular` 到 `6.x`
 - 升级开发依赖库
+- 升级 `webpack` 到 `4.x`
 
 ## v_0.2.0 (2018-07-07)
 

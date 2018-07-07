@@ -7,6 +7,7 @@ module.exports = {
   devtool: 'cheap-source-map',
   cache: true,
   profile: true,
+  optimization: {},
   resolve: {
     extensions: ['.ts', '.js']
   },
