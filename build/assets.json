@@ -1,7 +1,7 @@
 {
   "vendor.js": [
     "./node_modules/zone.js/dist/zone.js",
-    "./node_modules/rxjs/bundles/Rx.js",
+    "./node_modules/rxjs/bundles/rxjs.umd.js",
     "./node_modules/reflect-metadata/Reflect.js",
     "./node_modules/jquery/dist/jquery.js",
     "./node_modules/nprogress/nprogress.js",
@@ -19,7 +19,7 @@
   ],
   "vendor.js.min": [
     "./node_modules/zone.js/dist/zone.min.js",
-    "./node_modules/rxjs/bundles/Rx.min.js",
+    "./node_modules/rxjs/bundles/rxjs.umd.min.js",
     "./node_modules/reflect-metadata/Reflect.js",
     "./node_modules/jquery/dist/jquery.min.js",
     "./node_modules/nprogress/nprogress.js",

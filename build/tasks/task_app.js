@@ -1,8 +1,7 @@
 const fs = require('fs');
 const webpack = require('webpack');
-const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 const webpackMerge = require('webpack-merge');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const commonConfig = require('./../webpack.common');
 const util = require('./../util');
@@ -17,8 +16,7 @@ module.exports = (gulp, params) => {
   });
 
   gulp.task('app:html', () => {
-    return gulp.src('index.html')
-      .pipe(gulp.dest('dist/'));
+    return gulp.src('index.html').pipe(gulp.dest('dist/'));
   });
 
   gulp.task('app:watch', done => {
@@ -44,15 +42,13 @@ module.exports = (gulp, params) => {
             NODE_ENV: params.isRelease ? '"production"' : '"development"'
           }
         }),
-        new ExtractTextPlugin({ filename: 'app/[name].css', disable: false, allChunks: true })
+        new MiniCssExtractPlugin({
+          filename: 'app/[name].css'
+        })
       ]
     });
     if (params.isRelease) {
-      opt.plugins.push(new UglifyJsPlugin({
-        compress: {
-          warnings: false
-        }
-      }));
+      opt.optimization.minimize = true;
     }
     const compiler = webpack(opt);
     if (params.isRelease) {
