@@ -3,6 +3,13 @@ const webpack = require('webpack');
 const { CheckerPlugin } = require('awesome-typescript-loader');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+function genarateCssLoader(test, lang, options) {
+  return {
+    test,
+    use: [{ loader: MiniCssExtractPlugin.loader }, 'css-loader', { loader: `${lang}-loader`, options: options || {} }]
+  };
+}
+
 module.exports = {
   devtool: 'cheap-source-map',
   target: 'web',
@@ -50,26 +57,10 @@ module.exports = {
         test: /\.css$/,
         use: [{ loader: MiniCssExtractPlugin.loader }, 'css-loader']
       },
-      {
-        test: /\.styl$/,
-        use: [{ loader: MiniCssExtractPlugin.loader }, 'css-loader', 'stylus-loader']
-      },
-      {
-        test: /\.less$/,
-        use: [{ loader: MiniCssExtractPlugin.loader }, 'css-loader', 'less-loader']
-      },
-      {
-        test: /\.scss$/,
-        use: [{ loader: MiniCssExtractPlugin.loader }, 'css-loader', 'sass-loader']
-      },
-      {
-        test: /\.sass$/,
-        use: [
-          { loader: MiniCssExtractPlugin.loader },
-          'css-loader',
-          { loader: 'sass-loader', options: { indentedSyntax: true } }
-        ]
-      }
+      genarateCssLoader(/\.styl$/, 'stylus'),
+      genarateCssLoader(/\.less$/, 'less'),
+      genarateCssLoader(/\.scss$/, 'sass'),
+      genarateCssLoader(/\.sass$/, 'sass', { indentedSyntax: true })
     ]
   },
   plugins: [new CheckerPlugin()]
